@@ -5,26 +5,36 @@
         static void Main(string[] args)
         {
             /**
-             * Working with Strings
+             * Working with numbers
              */
+            Console.WriteLine("Addition: " + (8 + 5));
+            Console.WriteLine("Subtraction: " + (8 - 5));
+            Console.WriteLine("Multiplication: " + (8 * 5));
+            Console.WriteLine("Division (int)   : " + (8 / 5));  // Returns int
+            Console.WriteLine("Division (double): " + (8 / 5.0));    // Returns double
+            Console.WriteLine("Modulus: " + (8 % 5));   // Remaining
 
-            Console.WriteLine("=================");
-            Console.WriteLine(" \"First\"\n Console\n Application");   // '\n' New line
-            Console.WriteLine("=================\n");
+            Console.WriteLine("\n=========================");
 
-            string text = "This Application" + " is COOL";  // Concat
-            Console.WriteLine("Original Text: " + text);
-            Console.WriteLine("First Character: " + text[0]);   // Get first character
-            Console.WriteLine("Text Length: " + text.Length);   // String length
-            Console.WriteLine("Lower Case: " + text.ToLower()); // To lower case
-            Console.WriteLine("Upper Case: " + text.ToUpper()); // To upper case
-            Console.WriteLine("Contains 'cool': " + text.ToLower().Contains("cool"));   // Contains
+            int num = 5;
+            Console.WriteLine("Initial Value: " + num);
 
-            // Locate string index inside a string
-            Console.WriteLine("\"Application\" index:" + text.IndexOf("Application"));  // Success
-            Console.WriteLine("\"Planning\" index:" + text.IndexOf("Planning"));    // "-1" = not found
-            Console.WriteLine("Index 5 Substring: " + text.Substring(5));
-            Console.WriteLine("Index 5 Substring with length 3: " + text.Substring(5, 3));
+            // Increment
+            num++;
+            Console.WriteLine("Incremented Value: " + num);
+            // Decrement
+            num--;
+            Console.WriteLine("Decremented Value: " + num);
+
+            /**
+             * Math methods
+             */
+            Console.WriteLine("\n=========================");
+            Console.WriteLine("Absolute number: " + Math.Abs(-32)); // Absolute value
+            Console.WriteLine("Power: " + Math.Pow(3, 2)); // Power
+            Console.WriteLine("Square root: " + Math.Sqrt(36)); // Square root
+            Console.WriteLine("Max: " + Math.Max(4, 90));   // Get Biggest value
+            Console.WriteLine("Min: " + Math.Min(4, 90));   // Get Smaller value
         }
     }
 }
