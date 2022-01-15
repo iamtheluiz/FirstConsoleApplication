@@ -5,38 +5,25 @@
         static void Main(string[] args)
         {
             /**
-             * Getting user input
+             * Arrays
              */
-            Console.WriteLine("|======================");
-            Console.WriteLine("| Pythagorean Theorem:");
-            Console.WriteLine("|======================");
+            string[] musics = {
+                "Hated by life itself",
+                "Remember When",
+                "Antes das Seis",
+                "Você pra sempre em mim"
+            };
 
-            double a, b, c;
-            a = ReadDouble("| -> Altitude (a): ");
-            b = ReadDouble("| -> Base (b): ");
+            Console.WriteLine("|=============================|");
+            Console.WriteLine("|=      Favorite Musics      =|");
+            Console.WriteLine("|=============================|");
 
-            c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
-
-            Console.WriteLine("|======================");
-            Console.WriteLine("| -> Hypotenuse: " + c);
-            Console.WriteLine("|======================");
-
-            Console.Write("\nPress any key to exit...");
-            Console.ReadLine();
-        }
-
-        static double ReadDouble(string message)
-        {
-            string line = "";
-            double value;
-
-            while (!double.TryParse(line, out value))
+            // Show all musics
+            for (int i = 0; i < musics.Length; i++)
             {
-                Console.Write(message);    
-                line = Console.ReadLine();
+                Console.WriteLine("|= " + (i+1) + " - " + musics[i]);
             }
-
-            return value;
+            Console.WriteLine("|=============================|");
         }
     }
 }
