@@ -5,25 +5,24 @@
         static void Main(string[] args)
         {
             /**
-             * Arrays
+             * Methods
              */
-            string[] musics = {
-                "Hated by life itself",
-                "Remember When",
-                "Antes das Seis",
-                "Você pra sempre em mim"
-            };
+            SayHi("Luiz");
+            SayHi("Maria", true);
+            SayHi("Balog");
+            SayHi("Bolize", true);
+            SayHi("Sara", true);
 
-            Console.WriteLine("|=============================|");
-            Console.WriteLine("|=      Favorite Musics      =|");
-            Console.WriteLine("|=============================|");
+            Console.ReadLine();
+        }
 
-            // Show all musics
-            for (int i = 0; i < musics.Length; i++)
+        static void SayHi(string name, bool hug = false)
+        {
+            Console.Write("Hello "+name+ "!\n");
+            if (hug == true)
             {
-                Console.WriteLine("|= " + (i+1) + " - " + musics[i]);
+                Console.WriteLine(" |-> You've been hugged!");
             }
-            Console.WriteLine("|=============================|");
         }
     }
 }
