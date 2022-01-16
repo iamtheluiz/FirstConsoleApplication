@@ -28,6 +28,7 @@ namespace FirstConsoleApplication
 
         public void Run()
         {
+            Console.Clear();
             ShowBanner();
             while (guessedNumber != generatedNumber)
             {
