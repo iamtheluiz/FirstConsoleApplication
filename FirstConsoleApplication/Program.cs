@@ -5,43 +5,45 @@
         static void Main(string[] args)
         {
             /**
-             * Tone Shifter
-             * -> User insert a musical note: "A", "A#", "B", "C", ...
-             * -> User insert a value of semitones to shift (allows negative or positive)
-             * -> Return the new note
+             * Gess the number
+             * - Generate a number between 1 and 100
+             * - Receive user input with a guess
+             *   > Display if input is greater ou lower than the generated number
              */
-            string[] notes = { "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" };
+            int guessCounter = 0;
+            int guessedNumber = 0;
+            Random random = new Random();
 
-            Console.WriteLine("|================================|");
-            Console.WriteLine("|=       Musical Shifter        =|");
-            Console.WriteLine("|================================|");
+            // Gerenate random number with min and max value
+            int generatedNumber = random.Next(1, 100);
 
-            Console.Write("| - Insert a musical note: ");
-            string note = Console.ReadLine();
-
-            Console.Write("| - Insert a shift value: ");
-            int shift = Convert.ToInt32(Console.ReadLine());
-
-            int newNoteIndex;
-            string newNote;
-
-            if (Array.IndexOf(notes, note) + shift >= 0)
+            Console.WriteLine("|==============================|");
+            Console.WriteLine("|=        Guessing Game       =|");
+            Console.WriteLine("|==============================|");
+            Console.WriteLine("| * Try to guess the number ");
+            Console.WriteLine("| between 1 and 100 chosen by");
+            Console.WriteLine("| the computer.");
+            Console.WriteLine("|------------------------------|");
+            while (guessedNumber != generatedNumber)
             {
-                newNoteIndex = (Array.IndexOf(notes, note) + shift) % notes.Length;
-                newNote = notes[newNoteIndex];
-            } else
-            {
-                newNoteIndex = Math.Abs((Array.IndexOf(notes, note) + shift + 1) % notes.Length);
-                Array.Reverse(notes);
-                newNote = notes[newNoteIndex];
+                guessCounter++;
+
+                Console.WriteLine("| Your guess number " + guessCounter);
+                Console.Write("| > ");
+                guessedNumber = Convert.ToInt16(Console.ReadLine());
+
+                if (guessedNumber < generatedNumber)
+                {
+                    Console.WriteLine("| * The generated number is greater than " + guessedNumber);
+                } else if (guessedNumber > generatedNumber)
+                {
+                    Console.WriteLine("| * The generated number is lower than " + guessedNumber);
+                }
+                Console.WriteLine("|------------------------------|");
             }
-
-            Console.WriteLine("|================================|");
-            Console.WriteLine("| New Note: " + newNote);
-            Console.WriteLine("|================================|");
-
-            Console.Write("\nPress ENTER to exit...");
-            Console.ReadLine();
+            Console.WriteLine("| Congratulations!");
+            Console.WriteLine("| You guessed the number after " + guessCounter + " attempts!");
+            Console.WriteLine("|==============================|");
         }
     }
 }
